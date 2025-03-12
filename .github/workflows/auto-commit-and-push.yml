@@ -2,12 +2,11 @@ name: Auto Commit and Push
 
 on:
   schedule:
-    - cron: "*/2 * * * *"  # Runs every 5 minutes
+    - cron: "*/2 * * * *"  # Runs every 2 minutes
   push:
     branches:
       - main  # Change to your branch name
-
-  workflow_dispatch:  # <-- Add this line    
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   auto-commit:
@@ -31,7 +30,6 @@ jobs:
             git commit -m "Auto-commit: $(date)"
           else
             echo "No changes, skipping commit."
-          fi
 
       - name: Push Changes
         env:

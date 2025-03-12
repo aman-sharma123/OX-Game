@@ -17,14 +17,12 @@ const winPatterns = [
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         console.log("box clicked");
-        if(turnO){
+        if (turnO) {
             box.innerText = "O";
             turnO = false;
         } else {
             box.innerText = "X";
             turnO = true;
         }
+    });
 });
-});
-
-VVJHHJHJH

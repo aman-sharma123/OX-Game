@@ -43,7 +43,7 @@ jobs:
 
       - name: Push Changes
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git remote set-url origin https://aman-sharma123:${GH_PAT}@github.com/aman-sharma123/OX-Game.git
+          git remote set-url origin https://aman-sharma123:${GH_TOKEN}@github.com/aman-sharma123/OX-Game.git
           git push origin main

@@ -1,0 +1,39 @@
+name: Auto Commit and Push
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
+  push:
+    branches:
+      - main  # Change to your branch name
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # Disable default GitHub token
+
+      - name: Set Up Git
+        run: |
+          git config --global user.name "aman-sharma123"
+          git config --global user.email "amanshpq123@gmail.com"
+
+      - name: Check for Changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected, committing..."
+            git add .
+            git commit -m "Auto-commit: $(date)"
+          else
+            echo "No changes, skipping commit."
+          fi
+
+      - name: Push Changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git remote set-url origin https://aman-sharma123:${GH_PAT}@github.com/aman-sharma123/OX-Game.git
+          git push origin main

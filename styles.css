@@ -37,7 +37,7 @@ body {
     background-color: #ffffc7;
 }
 
-.reset-btn {
+#reset-btn {
     height: 7vmin;
     width: 15vmin;
     border-radius: 1rem;
@@ -47,7 +47,7 @@ body {
     background-color: #191913;
 }
 
-.new-btn {
+#new-btn {
     height: 7vmin;
     width: 15vmin;
     border-radius: 1rem;
@@ -64,5 +64,10 @@ body {
 }
 
 .msg-container {
-    height: 30vmin;
+    height: 70vmin;
+    margin-top: 30vmin;
+}
+
+.hide {
+    display: none;
 }

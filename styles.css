@@ -34,14 +34,35 @@ body {
     box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3);
     font-size: 8vmin;
     color: #b0413e;
+    background-color: #ffffc7;
 }
 
-.reset {
-    height: 10vmin;
+.reset-btn {
+    height: 7vmin;
     width: 15vmin;
     border-radius: 1rem;
     border: none;
     box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3);
     color: #fff;
     background-color: #191913;
+}
+
+.new-btn {
+    height: 7vmin;
+    width: 15vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3);
+    color: #fff;
+    background-color: #191913;
+}
+
+#msg {
+    font-size: 8vmin;
+    color: #ffffc7;
+    margin-bottom: 5vmin;
+}
+
+.msg-container {
+    height: 30vmin;
 }
